@@ -3,19 +3,26 @@ package easy;
 import java.util.Scanner;
 
 /**
- * Created by Vitalij on 2017-02-10.
+ * Program wypisujacy liczbe dziesiatek i jednosci silni wpisanej liczby n
+ *
+ * @param number - liczba pobrana od uzytkownika. Od niej obliczamy silnie (liczonej tylko dla zakresu 2..10, dla reszty wypisujacej gotowe wyniki),
+ *               a nastepnie wyswietlamy liczbe dziesiatek i jednosci wyniku
+ * @author m.losK
+ * @version 3.0
  */
+
 public class TwoNumbersOfFactorial {
-    public static void main(String[] args) throws java.lang.Exception {
-        int numberOfTests = getNumberFromUser();
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int numberOfTests = getNumberFromUser(in);
         for (int i = 0; i < numberOfTests; i++) {
-            int number = getNumberFromUser();
+            int number = getNumberFromUser(in);
             printTwoNumbersOfFactorial(number);
         }
+        in.close();
     }
 
-    public static int getNumberFromUser() {
-        Scanner in = new Scanner(System.in);
+    public static int getNumberFromUser(Scanner in) {
         return in.nextInt();
     }
 
